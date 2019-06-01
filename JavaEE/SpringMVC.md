@@ -148,11 +148,95 @@ public interface StudentMapper {
 	public int insert(Student student );
 }
 ```
-###（9）在 com.sdut.test 
+###（9）在 com.sdut.test 下创建 StudentMapperTest.java 测试类：
+```java
+package com.sdut.test;
 
-（9）执行测试类，系统输出效果为：
+import java.util.List;
 
-### result : 
+import org.apache.ibatis.session.SqlSession;
+import org.junit.Before;
+import org.junit.jupiter.api.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.sdut.mapper.StudentMapper;
+import com.sdut.pojo.Student;
+import com.sdut.util.SqlSessionFactoryUtils;
+
+class StudentMapperTest {
+
+	private static ApplicationContext Context;
+
+	@Before
+	public void init() {
+		Context = new ClassPathXmlApplicationContext("classpath:ApplicationContext.xml");
+	}
+
+	static {
+		Context = new ClassPathXmlApplicationContext("classpath:ApplicationContext.xml");
+
+	}
+
+	@Test
+	static void testSelectById() {
+
+		StudentMapper mapper = Context.getBean(StudentMapper.class);
+		Student stu = mapper.selectById(3);
+		System.out.println(stu);
+		System.out.println("=======================================================");
+	}
+
+	public static void main(String[] args) {
+		testSelectById();
+	}
+
+	@Test
+	void testSelectAll() {
+
+		StudentMapper mapper = Context.getBean(StudentMapper.class);
+		System.out.println("============================================================");
+		List<Student> list = mapper.selectAll();
+		for (Student student : list) {
+			System.out.println(student);
+		}
+	}
+
+	@Test
+	void testUpdate() {
+		StudentMapper mapper = Context.getBean(StudentMapper.class);
+		System.out.println("============================================================");
+		Student stu = mapper.selectById(29);
+		System.out.println("select by id 29: before change : " + stu + "===================");
+		stu.setSname("lucy");
+		stu.setSage(25);
+		mapper.updateByStudent(stu);
+		Student student = mapper.selectById(stu.getId());
+		System.out.println("select by id 29 : after change : " + student + "================");
+
+		System.out.println("=============================================================");
+	}
+
+	@Test
+	void testInsert() {
+		StudentMapper mapper = Context.getBean(StudentMapper.class);
+		System.out.println("============================================================");
+		Student student = new Student(40, "whywahtHow", 21);
+		mapper.insert(student);
+	}
+
+	@Test
+	void testDeleteById() {
+		StudentMapper mapper = Context.getBean(StudentMapper.class);
+				System.out.println("============================================================");
+		mapper.deleteById(40);
+	}
+
+}
+
+```
+
+### (10) result : 
 - selectALL
 ```java
 DEBUG [main] - Creating a new SqlSession
