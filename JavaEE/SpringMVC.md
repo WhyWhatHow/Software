@@ -19,7 +19,8 @@ mybatis-3.2.7.jar                   spring-tx-4.2.4.RELEASE.jar
 mybatis-spring-1.2.2.jar            spring-web-4.2.4.RELEASE.jar
 mysql-connector-java-5.1.7-bin.jar
 ```
-### (3) mu
+### (3) mybatis 配置文件：mybatis-config.xml
+```xml`
 
 
 （7）在。。。创建XML文件，文件名为：***.xml，在其中填充代码后，文件内容为：
