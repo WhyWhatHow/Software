@@ -1,4 +1,4 @@
-## SRC: [传送门]()
+## 建议老师看这个文档: [传送门](https://github.com/WhyWhatHow/Software/blob/master/JavaEE/SpringMVC.md)
 [源码](../.local/static/2019/5/6/SpringMybatisPrj.1559372208319.zip)
 ### （1）创建Java Project，项目名称为：SpringMybatisPrj。
 
