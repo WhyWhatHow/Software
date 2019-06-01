@@ -1,6 +1,6 @@
-（1）创建Java Project，项目名称为：SpringMybatisPrj。
+### （1）创建Java Project，项目名称为：SpringMybatisPrj。
 
-（2）加载JAR包：
+### （2）加载JAR包：
 ```shell
 aopalliance-1.0.jar                 slf4j-api-1.7.5.jar
 asm-3.3.1.jar                       slf4j-log4j12-1.7.5.jar
@@ -19,17 +19,8 @@ mybatis-3.2.7.jar                   spring-tx-4.2.4.RELEASE.jar
 mybatis-spring-1.2.2.jar            spring-web-4.2.4.RELEASE.jar
 mysql-connector-java-5.1.7-bin.jar
 ```
+### (3) mu
 
-
-并将JAR包配置到类路径。
-
-（3）建立com.sdut.mapper，在里面建立接StudentMapper，代码如下：
-
-（4）在com.sdut.pojo包里创建Student，代码如下：
-
-（5）。。。。。。。。
-
-（6）。。。。。。。
 
 （7）在。。。创建XML文件，文件名为：***.xml，在其中填充代码后，文件内容为：
 
@@ -37,7 +28,6 @@ mysql-connector-java-5.1.7-bin.jar
 
 （9）执行测试类，系统输出效果为：
 
-（10）整个项目压缩文件为：
 ### result : 
 - selectALL
 ```java
