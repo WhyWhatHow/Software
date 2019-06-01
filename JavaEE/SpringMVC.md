@@ -86,9 +86,10 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 </beans>
 
 ```
-### （5）5. 复制jdbc.properties配置文件到新工程
+### （5）. 复制jdbc.properties配置文件到新工程
 ### （6）. 复制log4j.properties配置文件到新工程
-
+### （7） com.sdut.pojo 下创建 Student.java 
+###  (8) com.sdut.mapper 下创建StudentMapper.xml,Stude
 （8）在。。。。创建测试类，类名为：。。。。。，测试代码为：
 
 （9）执行测试类，系统输出效果为：
