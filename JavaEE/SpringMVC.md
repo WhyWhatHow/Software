@@ -55,6 +55,7 @@ Student [sid=3, sname=proiden, sage=16]
 - deleteByID
 ```java
 
+
 ```
 
 - insert
@@ -72,5 +73,34 @@ DEBUG [main] - Returning JDBC Connection to DataSource
 ```
 - updateByStudent
 ```java
-
+DEBUG [main] - Creating a new SqlSession
+DEBUG [main] - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@34129c78] was not registered for synchronization because synchronization is not active
+DEBUG [main] - Fetching JDBC Connection from DataSource
+DEBUG [main] - JDBC Connection [jdbc:mysql://localhost:3306/mybatis?characterEncoding=utf-8, UserName=root@localhost, MySQL-AB JDBC Driver] will not be managed by Spring
+DEBUG [main] - ==>  Preparing: select distinct * from student where id = ? 
+DEBUG [main] - ==> Parameters: 29(Integer)
+DEBUG [main] - <==      Total: 1
+DEBUG [main] - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@34129c78]
+DEBUG [main] - Returning JDBC Connection to DataSource
+select by id 29: before change : Student [sid=29, sname=张三, sage=20]===================
+DEBUG [main] - Creating a new SqlSession
+DEBUG [main] - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5b3f61ff] was not registered for synchronization because synchronization is not active
+DEBUG [main] - Fetching JDBC Connection from DataSource
+DEBUG [main] - JDBC Connection [jdbc:mysql://localhost:3306/mybatis?characterEncoding=utf-8, UserName=root@localhost, MySQL-AB JDBC Driver] will not be managed by Spring
+DEBUG [main] - ==>  Preparing: update student SET name =?, age =? where id = ? 
+DEBUG [main] - ==> Parameters: lucy(String), 25(Integer), 29(Integer)
+DEBUG [main] - <==    Updates: 1
+DEBUG [main] - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5b3f61ff]
+DEBUG [main] - Returning JDBC Connection to DataSource
+DEBUG [main] - Creating a new SqlSession
+DEBUG [main] - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@327af41b] was not registered for synchronization because synchronization is not active
+DEBUG [main] - Fetching JDBC Connection from DataSource
+DEBUG [main] - JDBC Connection [jdbc:mysql://localhost:3306/mybatis?characterEncoding=utf-8, UserName=root@localhost, MySQL-AB JDBC Driver] will not be managed by Spring
+DEBUG [main] - ==>  Preparing: select distinct * from student where id = ? 
+DEBUG [main] - ==> Parameters: 29(Integer)
+DEBUG [main] - <==      Total: 1
+DEBUG [main] - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@327af41b]
+DEBUG [main] - Returning JDBC Connection to DataSource
+select by id 29 : after change : Student [sid=29, sname=lucy, sage=25]================
+=============================================================
 ```
