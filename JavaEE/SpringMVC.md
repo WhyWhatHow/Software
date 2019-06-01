@@ -29,7 +29,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 </configuration>
 
 ```
-### spring 配置文件 ApplicationContext.xml
+### （4）spring 配置文件 ApplicationContext.xml
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -86,8 +86,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 </beans>
 
 ```
-
-（7）在。。。创建XML文件，文件名为：***.xml，在其中填充代码后，文件内容为：
+### （5）5. 复制jdbc.properties配置文件到新工程
+### （6）. 复制log4j.properties配置文件到新工程
 
 （8）在。。。。创建测试类，类名为：。。。。。，测试代码为：
 
