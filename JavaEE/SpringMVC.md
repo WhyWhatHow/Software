@@ -20,8 +20,72 @@ mybatis-spring-1.2.2.jar            spring-web-4.2.4.RELEASE.jar
 mysql-connector-java-5.1.7-bin.jar
 ```
 ### (3) mybatis 配置文件：mybatis-config.xml
-```xml`
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>	
+</configuration>
 
+```
+### spring 配置文件 ApplicationContext.xml
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+
+	<!-- 加载配置文件 -->
+	<context:property-placeholder
+		location="classpath:jdbc.properties" />
+
+	<!-- 数据库连接池 -->
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driver}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<!-- 连接池的最大数据库连接数 -->
+		<property name="maxActive" value="10" />
+		<!-- 最大空闲数 -->
+		<property name="maxIdle" value="5" />
+	</bean>
+
+	<!-- SqlSessionFactory配置 -->
+	<bean id="sqlSessionFactory"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<!-- 加载mybatis核心配置文件 -->
+		<property name="configLocation"
+			value="classpath:mybatis-config.xml" />
+		<!-- 别名包扫描 -->
+		<property name="typeAliasesPackage" value="com.sdut.pojo" />
+	</bean>
+
+	<!-- 动态代理Dao开发，第一种方式，包扫描器(推荐使用) -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<!-- basePackage：配置映射包装扫描，多个包时用","或";"分隔 -->
+		<property name="basePackage"
+			value="com.sdut.mapper" />
+	</bean>
+
+	<!-- 动态代理，第二种方式：包扫描（推荐）： -->
+<!-- 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"> -->
+	<!-- basePackage多个包用","分隔 --> 
+<!-- 		<property name="basePackage" value="com.sdut.mapper" /> -->
+<!-- 	</bean> -->
+</beans>
+
+```
 
 （7）在。。。创建XML文件，文件名为：***.xml，在其中填充代码后，文件内容为：
 
