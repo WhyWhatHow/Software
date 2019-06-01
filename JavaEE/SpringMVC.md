@@ -54,10 +54,14 @@ Student [sid=3, sname=proiden, sage=16]
 ```
 - deleteByID
 ```java
+
 ```
 
 - insert
 ```java
+
 ```
 - updateByStudent
+```java
+
 ```
