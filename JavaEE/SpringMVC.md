@@ -1,7 +1,7 @@
 （1）创建Java Project，项目名称为：SpringMybatisPrj。
 
 （2）加载JAR包：
-```
+```shell
 aopalliance-1.0.jar                 slf4j-api-1.7.5.jar
 asm-3.3.1.jar                       slf4j-log4j12-1.7.5.jar
 aspectjweaver-1.6.11.jar            spring-aop-4.2.4.RELEASE.jar
@@ -23,9 +23,9 @@ mysql-connector-java-5.1.7-bin.jar
 
 并将JAR包配置到类路径。
 
-（3）建立包。。。。，在里面建立接口。。。。。。，代码如下：
+（3）建立com.sdut.mapper，在里面建立接StudentMapper，代码如下：
 
-（4）在。。。包里创建类。。。。。，代码如下：
+（4）在com.sdut.pojo包里创建Student，代码如下：
 
 （5）。。。。。。。。
 
