@@ -89,7 +89,50 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 ### （5）. 复制jdbc.properties配置文件到新工程
 ### （6）. 复制log4j.properties配置文件到新工程
 ### （7） com.sdut.pojo 下创建 Student.java 
-###  (8) com.sdut.mapper 下创建StudentMapper.xml,Stude
+###  (8) com.sdut.mapper 下创建StudentMapper.xml,StudentMapper.java 
+#### StudentMapper.xml
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sdut.mapper.StudentMapper">
+
+<select id="selectById" parameterType="int"
+		resultType="student">
+		select distinct * from
+		student	
+		where  id = #{id}
+	</select>
+	<select id="selectAll" resultType="student">
+		select distinct * from
+		student
+	</select>
+	<insert id="insert" parameterType="student">
+		insert student(id, name ,age) values (#{id},#{name},#{age})
+	</insert>
+	<delete id="deleteById">
+		delete from student where id =#{id} 
+	</delete>
+	<update id="updateByStudent" parameterType="student"> 
+		 update student  
+		 <set>	
+		<if test="name!=null and  name != '' ">
+			name =#{name},
+		</if>
+		<if test="age!=null and  age != 0 ">
+			age =#{age},
+		</if>
+		 </set>
+		 where id = #{id}
+	</update>
+</mapper>
+
+```
+#### StudentMapper.java
+```java
+```
 （8）在。。。。创建测试类，类名为：。。。。。，测试代码为：
 
 （9）执行测试类，系统输出效果为：
