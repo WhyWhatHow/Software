@@ -1,6 +1,7 @@
-（1）创建WEB Project，项目名称为：SPringmvc-01。
+### Src:
+### （1）创建WEB Project，项目名称为：SPringmvc-01。
 
-（2）加载JAR包：
+### （2）加载JAR包：
 ```java
 commons-logging-1.1.1.jar         spring-core-4.2.4.RELEASE.jar
 jstl-1.2.jar                      spring-expression-4.2.4.RELEASE.jar
