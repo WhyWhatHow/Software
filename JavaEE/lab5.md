@@ -1,8 +1,15 @@
-（1）创建WEB Project，项目名称为：SPringPrj。
+（1）创建WEB Project，项目名称为：SPringmvc-01。
 
 （2）加载JAR包：
+```java
+commons-logging-1.1.1.jar         spring-core-4.2.4.RELEASE.jar
+jstl-1.2.jar                      spring-expression-4.2.4.RELEASE.jar
+spring-aop-4.2.4.RELEASE.jar      spring-web-4.2.4.RELEASE.jar
+spring-beans-4.2.4.RELEASE.jar    spring-webmvc-4.2.4.RELEASE.jar
+spring-context-4.2.4.RELEASE.jar
 
-。。。。。。。。。。。
+```
+
 
 并将JAR包配置到类路径。
 
