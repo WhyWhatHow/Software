@@ -152,7 +152,10 @@ public class StudentController {
 
 ```
 
-### （5）。。。。。。。
+### （5）config 文件夹下创建 springmvc.xml :
+```xml
+
+```
 
 （7）在。。。创建XML文件，文件名为：***.xml，在其中填充代码后，文件内容为：
 
