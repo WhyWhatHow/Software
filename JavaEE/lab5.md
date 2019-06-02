@@ -120,9 +120,39 @@ public class Student {
 
 ```
 
-### （4）com.sdut.controller 下创建　S
+### （4）com.sdut.controller 下创建　StudentController 
 
-（6）。。。。。。。
+```java
+package com.sdut.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.sdut.pojo.Student;
+
+@Controller
+public class StudentController {
+
+	@RequestMapping("student")
+	public String student(Student stu, Model model) {
+		System.out.println(stu);
+
+		if (stu.getAge() != null || stu.getId() != null || stu.getName() != null && stu.getName() != "") {
+			model.addAttribute("stu", stu);
+			return "studentInfo";
+
+		} else {
+			// 模拟查询商品列表
+			return "success";
+
+		}
+	}
+}
+
+```
+
+### （5）。。。。。。。
 
 （7）在。。。创建XML文件，文件名为：***.xml，在其中填充代码后，文件内容为：
 
