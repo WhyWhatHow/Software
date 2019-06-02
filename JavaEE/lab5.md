@@ -1,4 +1,4 @@
-### Src:[springmvc-01](../.local/static/2019/5/0/springmvc-01.1559480190887.zip)
+### Src: [springmvc-01](../.local/static/2019/5/0/springmvc-01.1559480190887.zip)
 ### Result :
  
 #### 　false : 
@@ -154,17 +154,35 @@ public class StudentController {
 
 ### （5）config 文件夹下创建 springmvc.xml :
 ```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- 配置controller扫描包 -->
+	<context:component-scan
+		base-package="com.sdut.controller" />
+
+	<!-- 配置处理器映射器 -->
+	<!-- <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/> -->
+	<!-- 配置处理器适配器 -->
+	<!-- <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/> -->
+
+	<!-- 配置注解驱动，相当于同时使用最新处理器映射跟处理器适配器,对json数据响应提供支持 -->
+	<mvc:annotation-driven />
+
+	<!-- 配置视图解析器 -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+</beans>
 
 ```
 
-（7）在。。。创建XML文件，文件名为：***.xml，在其中填充代码后，文件内容为：
-
-（8）在。。。包中创建Controller类，代码为：
-
-（8）在。。。创建JSP页面****.jsp，代码为：
-
-（9）在浏览器地址栏输入。。。。。。，执行效果为：（截图）。。。。。
-
-（10）整个项目压缩文件为：
-
-（项目文件夹压缩为一个ZIP文件，或者RAR文件，作为附件上传）。
