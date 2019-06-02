@@ -1,4 +1,7 @@
 ### Src:[springmvc-01](../.local/static/2019/5/0/springmvc-01.1559480190887.zip)
+### Result : 
+
+![false](../.local/static/2019/5/0/2019-06-02 20-32-32 的屏幕截图.1559480270509.png)
 ### （1）创建WEB Project，项目名称为：SPringmvc-01。
 
 ### （2）加载JAR包：
