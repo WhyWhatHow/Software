@@ -7,4 +7,5 @@
 
 
 ### 员工职位调动通信图：
-![title](../.local/static/2019/5/2/ECＣ.svg)
+
+![员工职位调动通信图](../.local/static/2019/5/2/ECC.svg)
