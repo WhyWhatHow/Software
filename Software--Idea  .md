@@ -1,0 +1,1 @@
+[Crack.jar](.local/static/2019/5/4/JetbrainsCrack-3.1-release-enc.1559831345584.jar)
