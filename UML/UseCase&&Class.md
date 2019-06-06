@@ -11,7 +11,7 @@
 > 除了可以有员工所有的功能外还可以进行工资发放
 - 银行系统:
 > 应该提供查询账户余额，转账的服务。
-
+![title](https://raw.githubusercontent.com/WhyWhatHow/Images/master/gitnote/2019/05/30/usecase-1559213120137.png?token=AH52T6QXMBT67VEHRZJDTVS4562H4)
 ### 用例图：
 ![title](../.local/static/2019/4/4/usecase.1559203046166.png)
 
