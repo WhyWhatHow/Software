@@ -34,7 +34,9 @@ if __name__ == '__main__':
     main()
 
 ```
-### 递归处理文件名：
+
+### 递归处理文件名：参考链接[传送](https://blog.csdn.net/u014735301/article/details/51203445)
+
 ```py
 
 #!/usr/bin/env python3
