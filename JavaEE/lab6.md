@@ -414,7 +414,61 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 
 </html>
 ```
-（5）com.sdut.mapper 下创建dao接口：
+####（5）com.sdut.mapper 下创建dao ：StudentMapper接口：
+- studentMapper.java
+``` java
+package com.sdut.ssm.mapper;
+
+import java.util.List;
+
+import com.sdut.ssm.pojo.Student;
+
+public interface StudentMapper {
+
+		/**   
+		 * @Description:  返回所有学生信息， 用于进入信息
+		 * @return：
+		 * @throws：
+		 * @version: v1.0.0
+		 * @author: WhyWhatHow
+		 * @date: 2019年6月9日  
+		 * Modification History:
+		 * Date         Author          Version            Description
+		 *---------------------------------------------------------*
+		 * 2019年6月9日     John Nash           v1.0.0               修改原因
+		 */
+		List<Student> getAllStudents();
+		
+		/**   
+		 * @Description: Dao 根据学生信息查询学生（模糊查询等）
+		 * @param stu
+		 * @return
+		 * @return： 相关学生信息列表 
+		 * @throws：
+		 * @version: v1.0.0
+		 * @author: WhyWhatHow
+		 * @date: 2019年6月9日  
+		 * Modification History:
+		 * Date         Author          Version            Description
+		 *---------------------------------------------------------*
+		 * 2019年6月9日     John Nash           v1.0.0               修改原因
+		 */
+		List<Student> getStudentsByVo(Student stu);
+		
+		int deleteStudentById(Integer id );
+		
+		int updateByStudent(Student stu);
+		
+		int insertStudent(Student stu);
+
+		Student getStudentById(Integer id);
+}
+
+```
+- studentMapper.xml
+```
+
+```
 
 （6）。。。。。。。
 
