@@ -272,7 +272,10 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 </configuration>
 ``
 
-（4）在com.sdut.pojo 创建 student.java 代码如下：
+####（4）在WebContent下创建 jsp文件 如下：
+```java
+
+```
 
 （5）。。。。。。。。
 
