@@ -331,9 +331,90 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 </html>
 ```
 - studentEdit.jsp
-- addStudent.jsp
 
-（5）。。。。。。。。
+```jsp
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"  prefix="fmt"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>修改信息</title>
+
+</head>
+<body> 
+<span>${ msg }</span>
+	<!-- 上传图片是需要指定属性 enctype="multipart/form-data" -->
+	<!-- <form id="stuForm" action="" method="post" enctype="multipart/form-data"> -->
+	<form id="student"	action="${pageContext.request.contextPath }/updateStudent.action" 
+	method="post">
+		<input type="hidden" name="id" value="${stu.id }" /> 修改学生个人信息：
+		<table width="100%" border=1>
+			<tr>
+				<td>学生姓名</td>
+				<td><input type="text" name="name" value="${stu.name }" /></td>
+			</tr>
+			<tr>
+				<td>学生年龄</td>
+				<td><input type="text" name="age" value="${stu.age }" /></td>
+			</tr>
+			
+			
+			<tr>
+				<td colspan="2" align="center"><input type="submit" value="提交" />
+				</td>
+			</tr>
+		</table>
+
+	</form>
+</body>
+
+</html>
+```
+- addStudent.jsp
+```jsp 
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"  prefix="fmt"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>添加學生</title>
+
+</head>
+<body> 
+	<!-- 上传图片是需要指定属性 enctype="multipart/form-data" -->
+	<!-- <form id="stuForm" action="" method="post" enctype="multipart/form-data"> -->
+	<form id="student"	action="${pageContext.request.contextPath }/addStudent.action" 
+	method="post">
+		<input type="hidden" name="id" value="${stu.id }" /> 添加學生个人信息：
+		<table width="100%" border=1>
+			<tr>
+				<td>学生姓名</td>
+				<td><input type="text" name="name"  /></td>
+			</tr>
+			<tr>
+				<td>学生年龄</td>
+				<td><input type="text" name="age"  /></td>
+			</tr>
+			
+			
+			<tr>
+				<td colspan="2" align="center"><input type="submit" value="提交" />
+				</td>
+			</tr>
+		</table>
+
+	</form>
+</body>
+
+</html>
+```
+（5）com.sdut.mapper 下创建dao接口：
 
 （6）。。。。。。。
 
