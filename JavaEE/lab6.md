@@ -576,7 +576,99 @@ public class StudentServiceImpl implements StudentService {
 ```
 
 ####（7）在com.sdut.ssm.controller 下创建 StudentController.java：
+```java
+package com.sdut.ssm.controller;
 
-（8）在。。。包中创建Controller类，代码为：
+import java.util.List;
 
-（8）在。。。创建JSP页面****.jsp，代码为：
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.sdut.ssm.pojo.Student;
+import com.sdut.ssm.service.StudentService;
+/*
+ * 有时候自己可能因为在eclipse 上的错误操作，导致 软件环境变量发生错误，导致项目失败
+ */
+
+@Controller
+public class StudentController {
+
+	@Autowired
+	private StudentService service;
+
+	@RequestMapping("list")
+	public String getList(Model model) {
+		List<Student> list = service.getAllStudents();
+		System.out.println("getList+===================================");
+		model.addAttribute("list", list);
+		model.addAttribute("msg","默認查潤的結果。。。。。");
+		for (Student student : list) {
+			System.out.println(student);
+		}
+		return "studentList";
+	}
+	
+	@RequestMapping("queryStudent")
+	public String queryStudent(Student student,Model model ) {
+		System.out.println("================================================");
+		List<Student> list = service.getStudentsByVo(student);
+		System.out.println(student);
+		model.addAttribute("list",list);
+		model.addAttribute("msg","條件查詢的結果。。。。。");
+		
+		return "studentList";
+	
+	}
+	
+	@RequestMapping("deleteStudent")
+	public  String   deleteStudent(Integer id ) {
+		service.deleteStudentById(id);
+		return "redirect:list.action";		
+	}
+	
+	@RequestMapping("editStudent")
+	public  String editStudent(Integer id ,Model model ) {
+			Student student = service.getStudentById(id);
+			model.addAttribute("stu",student);
+			return "studentEdit";
+	}
+	@RequestMapping("updateStudent")
+	public 	String  updateByStudent( Student stu, Model model  ) {
+	
+		System.out.println("update by student ....."+stu);
+		model.addAttribute("msg", "修改学生信息成功............");
+		
+		service.updateByStudent(stu);
+			 
+		
+		return "forward:/list.action";		
+	}
+	@RequestMapping("preAddStudent")
+	public String preAddStudent(){
+		return "addStudent";
+	}
+	@RequestMapping("addStudent")
+	public String addStudent(Student stu ,Model model )  {
+		System.out.println("insert ....");
+		model.addAttribute("msg","添加学生成功...........");
+		service.insertStudent(stu);
+		return "forward:/list.action";
+	}
+	
+	
+	
+
+//	@RequestMapping("hello") 
+//	public String getHello() {
+//		System.out.println("hello , this is springmvc  ");
+//		System.out.println("hello ...............");
+//		return "studentList";
+//	}
+
+}
+
+
+```
+
