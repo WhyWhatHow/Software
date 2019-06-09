@@ -339,7 +339,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"  prefix="fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
+<head>1. 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>修改信息</title>
 
@@ -466,11 +466,52 @@ public interface StudentMapper {
 
 ```
 - studentMapper.xml
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sdut.ssm.mapper.StudentMapper">
+	<select id="getStudentById" parameterType="int" resultType="student">
+		select * from student where id =#{id}	
+	</select>
+	<select id="getAllStudents" resultType="student">
+		select * from student
+	</select>
+	<select id="getStudentsByVo" parameterType="student"
+		resultType="student">
+		select * from student
+		<where>	 
+		<if test="name!=null and name!=''">
+			 and name like '%${name}%' 
+		</if>
+		<if test="age !=null  ">
+			and age = #{age}  
+		</if>
+		</where>
+	</select>
+	<delete id="deleteStudentById" parameterType="int" >
+		 delete from student where id = #{id}
+	</delete>
+	<insert id="insertStudent" parameterType="student" >
+		 insert into  student values(null,#{name},#{age});
+	</insert>
+	<update id="updateByStudent" parameterType="student">
+		update student  <set>
+			 <if test="name!=null and name!=''">
+			 	name = #{name} , 
+			 </if>
+			 <if test="age!=null">
+			 age=#{age}
+			 </if>
+		</set>
+		where id=#{id}
+	</update>
+</mapper>
 ```
 
-```
 
-（6）。。。。。。。
+####（6) com.sdut.ssm.service
 
 （7）在。。。创建XML文件，文件名为：***.xml，在其中填充代码后，文件内容为：
 
