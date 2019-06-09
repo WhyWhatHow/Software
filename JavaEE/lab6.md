@@ -1,3 +1,5 @@
+### 推荐查看方式：
+- [传送门](https://github.com/WhyWhatHow/Software/blob/master/JavaEE/lab6.md)
 ### finished:
 - 对学生表的增删改查(必做四个完成）
 - 对学生表的模糊查询，（动态 sql）（选做3完成）
