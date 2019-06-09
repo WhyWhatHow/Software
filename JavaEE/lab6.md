@@ -511,8 +511,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 ```
 
 
-####（6) com.sdut.ssm.service 下创建StudentServiceImpl类
--
+####（6) com.sdut.ssm.service.impl 下创建StudentServiceImpl类
+- StudentServiceImpl.java
 ```java
 package com.sdut.ssm.service.impl;
 
@@ -575,7 +575,7 @@ public class StudentServiceImpl implements StudentService {
 }
 ```
 
-（7）在。。。创建XML文件，文件名为：***.xml，在其中填充代码后，文件内容为：
+####（7）在com.sdut.ssm.controller 下创建 StudentController.java：
 
 （8）在。。。包中创建Controller类，代码为：
 
