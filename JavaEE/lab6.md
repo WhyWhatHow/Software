@@ -56,7 +56,12 @@ log4j-core-2.0-rc1.jar         spring-webmvc-4.2.4.RELEASE.jar
 ```
 并将JAR包配置到类路径。
 
-（3) 配置 ：
+####（3) spring ，springmvc， mybatis  配置（config下） ：
+##### spring :
+- applicationContext-dao.xml
+- applicationContext-dao.xml
+- applicationContext-dao.xml
+- 
 
 （4）在。。。包里创建类。。。。。，代码如下：
 
