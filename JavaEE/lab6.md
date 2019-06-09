@@ -189,13 +189,90 @@ log4j-core-2.0-rc1.jar         spring-webmvc-4.2.4.RELEASE.jar
 
 ```
 
-##### springmvc 配置： springmvc/
+##### springmvc 配置： springmvc.xml
 ```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+	 	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<!-- 配置@controller扫描包 -->
+	<context:component-scan base-package="com.sdut.ssm.controller" />
+	
+	
+	<!-- 配置注解驱动，相当于同时使用最新处理器映射跟处理器适配器,对json数据响应提供支持 -->
+	<mvc:annotation-driven />
+	<!-- 使用自定义转换器 -->
+<!-- 	<mvc:annotation-driven conversion-service="MyConvert" /> -->
+	
+	<!-- 定义转换器 -->
+<!-- 	<bean id="MyConvert" class="org.springframework.format.support.FormattingConversionServiceFactoryBean"> -->
+<!-- 		<property name="converters"> -->
+<!-- 			<set> -->
+<!-- 				<bean class="com.itheima.springmvc.utils.DateConvert" /> -->
+<!-- 			</set> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+	
+	<!-- 配置视图解析器 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/"/>
+		<property name="suffix" value=".jsp"/>
+	</bean>
+	
+	<!-- 配置全局异常处理器 -->
+<!-- 	<bean class="com.itheima.springmvc.exception.CustomerExceptionResolver"/> -->
+	
+	<!-- 配置多媒体处理器 -->
+	<!-- 注意：这里id必须填写：multipartResolver -->
+<!-- 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"> -->
+		<!-- 最大上传文件大小 -->
+<!-- 		<property name="maxUploadSize" value="8388608" /> -->
+<!-- 	</bean> -->
+	
+<!-- 	<mvc:interceptors> -->
+<!-- 		<mvc:interceptor> -->
+			<!-- /**拦截所有请求，包括二级以上目录 -->
+<!-- 			<mvc:mapping path="/**"/> -->
+<!-- 			<bean class="com.itheima.springmvc.interceptor.MyInterceptor" /> -->
+<!-- 		</mvc:interceptor> -->
+<!-- 		<mvc:interceptor> -->
+			<!-- /**拦截所有请求，包括二级以上目录 -->
+<!-- 			<mvc:mapping path="/**"/> -->
+<!-- 			<bean class="com.itheima.springmvc.interceptor.MyInterceptor2" /> -->
+<!-- 		</mvc:interceptor> -->
+<!-- 		<mvc:interceptor> -->
+			<!-- /**拦截所有请求，包括二级以上目录 -->
+<!-- 			<mvc:mapping path="/**"/> -->
+			<!-- 配置不拦截目录 -->
+<!-- 			<mvc:exclude-mapping path="/user/**"/> -->
+<!-- 			<bean class="com.itheima.springmvc.interceptor.LoginInterceptor" /> -->
+<!-- 		</mvc:interceptor> -->
+<!-- 	</mvc:interceptors> -->
+	
+</beans>
+
 ```
  
-##### mybatis 配置： 
+##### mybatis 配置： mybatis-config.xml
+``xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+</configuration>
+``
 
-（4）在。。。包里创建类。。。。。，代码如下：
+（4）在com.sdut.pojo 创建 student.java 代码如下：
 
 （5）。。。。。。。。
 
