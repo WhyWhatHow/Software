@@ -273,9 +273,65 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 ``
 
 ####（4）在WebContent下创建 jsp文件 如下：
-```java
+- studentList.jsp
+```jsp
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"  prefix="fmt"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>查询学生信息 </title>
+</head>
+<body> 
+<span>${ msg }</span>
+<br>	
+	<button><a href="${pageContext.request.contextPath }/preAddStudent.action">添加一个学生</a></button>
+<br>
+<br>
+<form action="${pageContext.request.contextPath }/queryStudent.action" method="post">
+查询条件：
+<table width="100%" border=1>
+<tr>
+<td>学生姓名:<input type="text" name="name" ></td>
+<td>学生年龄:<input type="text" name="age"  ></td>
+<td><input type="submit" value="查询"/></td>
+</tr>
+<tr>
+</tr>
+</table>
+<br>
 
+学生列表：
+<table width="100%" border=1>
+<tr>
+	<td>选择</td>
+	<td>学生姓名</td>
+	<td>学生年龄</td>
+	<td colspan="2">操作</td>
+</tr>
+<c:forEach items="${list }" var="stu" varStatus="status">
+<tr>
+	<td><input type="checkbox" name="ids" value="${stu.id}"></td>
+	<td>
+	<input type="hidden" name="items[${ status.index }].id" value="${stu.id}">
+	<input type="text" name="items[${ status.index }].name" value="${stu.name }"></td>
+	<td><input type="text" name="items[${ status.index }].age" value="${stu.age }"></td>
+	<td><a href="${pageContext.request.contextPath }/deleteStudent.action?id=${stu.id}">删除</a></td>
+	<td><a href="${pageContext.request.contextPath }/editStudent.action?id=${stu.id}">修改</a></td>
+</tr>
+</c:forEach>
+
+</table>
+</form>
+</body>
+
+</html>
 ```
+- studentEdit.jsp
+- addStudent.jsp
 
 （5）。。。。。。。。
 
