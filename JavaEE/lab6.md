@@ -1,7 +1,8 @@
 ### 推荐查看方式：
 - [传送门](https://github.com/WhyWhatHow/Software/blob/master/JavaEE/lab6.md)
 - 源码： [ssmPrj](../.local/static/2019/5/0/SSMPrj.1560088918350.zip)
-- 
+- sql 文件：
+[homework](../.local/static/2019/5/0/homework.1560089102479.sql)
 ### finished:
 
 - 对学生表的增删改查(必做四个完成）
