@@ -414,7 +414,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 
 </html>
 ```
-####（5）com.sdut.mapper 下创建dao ：StudentMapper接口：
+####（5）com.sdut.ssm.mapper 下创建dao ：StudentMapper接口：
 - studentMapper.java
 ``` java
 package com.sdut.ssm.mapper;
@@ -511,7 +511,69 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 ```
 
 
-####（6) com.sdut.ssm.service
+####（6) com.sdut.ssm.service 下创建StudentServiceImpl类
+-
+```java
+package com.sdut.ssm.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.sdut.ssm.mapper.StudentMapper;
+import com.sdut.ssm.pojo.Student;
+import com.sdut.ssm.service.StudentService;
+
+
+@Service
+public class StudentServiceImpl implements StudentService {
+	
+	@Autowired
+	private StudentMapper mapper;
+
+	@Override
+	public List<Student> getAllStudents() {
+		return mapper.getAllStudents();
+	
+	}
+
+	@Override
+	public List<Student> getStudentsByVo(Student stu) {
+		 return mapper.getStudentsByVo(stu);
+	}
+	@Override
+	public int deleteStudentById(Integer id ) {
+
+		return mapper.deleteStudentById(id);
+		
+	}
+
+	@Override
+	public int updateByStudent(Student stu) {
+		 return mapper.updateByStudent(stu);
+		 
+	}
+
+	@Override
+	public int insertStudent(Student stu) {
+		 return mapper.insertStudent(stu);
+	}
+
+	@Override
+	public Student getStudentById(Integer id) {
+		 return mapper.getStudentById(id);
+		 
+	}
+	
+	 
+	
+	
+	
+	
+
+}
+```
 
 （7）在。。。创建XML文件，文件名为：***.xml，在其中填充代码后，文件内容为：
 
