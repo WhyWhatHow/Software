@@ -28,16 +28,35 @@
 - 插入用户信息后： 
 - ![title](../.local/static/2019/5/0/after-add.1560086717890.png)
 
-### step：  
+### Step：
+  
+#### 1）创建WEB Project，项目名称为：SSMPrj。
 
-1）创建WEB Project，项目名称为：SSMPrj。
+#### 2）加载JAR包：
+```java
+aopalliance-1.0.jar            mybatis-3.2.7.jar
+asm-3.3.1.jar                  mybatis-spring-1.2.2.jar
+aspectjweaver-1.6.11.jar       mysql-connector-java-5.1.7-bin.jar
+cglib-2.2.2.jar                slf4j-api-1.7.5.jar
+commons-dbcp-1.2.2.jar         slf4j-log4j12-1.7.5.jar
+commons-fileupload-1.2.2.jar   spring-aop-4.2.4.RELEASE.jar
+commons-io-2.4.jar             spring-aspects-4.2.4.RELEASE.jar
+commons-logging-1.1.1.jar      spring-beans-4.2.4.RELEASE.jar
+commons-pool-1.3.jar           spring-context-4.2.4.RELEASE.jar
+jackson-annotations-2.4.0.jar  spring-context-support-4.2.4.RELEASE.jar
+jackson-core-2.4.2.jar         spring-core-4.2.4.RELEASE.jar
+jackson-databind-2.4.2.jar     spring-expression-4.2.4.RELEASE.jar
+javassist-3.17.1-GA.jar        spring-jdbc-4.2.4.RELEASE.jar
+jstl-1.2.jar                   spring-jms-4.2.4.RELEASE.jar
+junit-4.9.jar                  spring-messaging-4.2.4.RELEASE.jar
+log4j-1.2.17.jar               spring-tx-4.2.4.RELEASE.jar
+log4j-api-2.0-rc1.jar          spring-web-4.2.4.RELEASE.jar
+log4j-core-2.0-rc1.jar         spring-webmvc-4.2.4.RELEASE.jar
 
-（2）加载JAR包：
-
-
+```
 并将JAR包配置到类路径。
 
-（3）建立包。。。。，在里面建立接口。。。。。。，代码如下：
+（3) 配置 ：
 
 （4）在。。。包里创建类。。。。。，代码如下：
 
